@@ -65,6 +65,36 @@ REST_FRAMEWORK = {
     )
 }
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'simple': {
+            'format': '[%(asctime)s] %(levelname)s: %(message)s',
+            'datefmt': '%Y.%m.%d %H:%M:%S',
+        }
+    },
+    'handlers': {
+        'file': {
+            'class': 'logging.FileHandler',
+            'level': 'ERROR',
+            'formatter': 'simple',
+            'filename': os.path.join(BASE_DIR, 'test2.log'),
+        },
+        'console': {
+            'class': 'logging.StreamHandler',
+            'level': 'ERROR',
+            'formatter': 'simple',
+        }
+
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file', 'console'],
+        }
+    }
+}
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
