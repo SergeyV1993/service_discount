@@ -21,6 +21,8 @@ def post(request):
 
             cart_sum = float(code.validated_data['amount_cart'])
             new_sum_cart = cart_sum - float(discount.nominal)
+            if new_sum_cart < 0:
+                new_sum_cart = 0
             return Response(json.dumps({"amount_cart": new_sum_cart, "cart": code.validated_data['cart']}))
         else:
             return Response(json.dumps({"status": "Error"}))
