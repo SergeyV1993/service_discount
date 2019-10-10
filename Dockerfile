@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:latest
 RUN mkdir /service
 WORKDIR /service
 ADD requirements.txt /service
