@@ -1,8 +1,8 @@
 from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework import status
 from .serializers import *
-import json
 
 
 @api_view(['POST'])
@@ -13,7 +13,7 @@ def post(request):
         if DiscountCart.objects.filter(code=code.validated_data['code']).exists():
             discount = DiscountCart.objects.get(code=code.validated_data['code'])
         else:
-            return Response(json.dumps({"status": "Code does not exist"}))
+            return Response({"message": "Code does not exist"}, status=status.HTTP_404_NOT_FOUND)
 
         if discount.status and discount.valid_date_end > datetime.now(timezone.utc):
             discount.cart, discount.status = code.validated_data['cart'], False
@@ -23,11 +23,11 @@ def post(request):
             new_sum_cart = cart_sum - float(discount.nominal)
             if new_sum_cart < 0:
                 new_sum_cart = 0
-            return Response(json.dumps({"amount_cart": new_sum_cart, "cart": code.validated_data['cart']}))
+            return Response({"amount_cart": new_sum_cart, "cart": code.validated_data['cart']},)
         else:
-            return Response(json.dumps({"status": "Error"}))
+            return Response({"message": "Expired"}, status=status.HTTP_403_FORBIDDEN)
     else:
-        return Response(json.dumps({"status": "Not Valid"}))
+        return Response({"message": "Not Valid"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET'])
