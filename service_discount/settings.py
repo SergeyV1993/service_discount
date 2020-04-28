@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'discount_cart',
     'rest_framework',
     'rest_framework.authtoken',
-    'djoser'
 ]
 
 MIDDLEWARE = [
