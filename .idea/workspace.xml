@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="be9bf697-1a4f-46b2-80ff-c07d1d2c1f76" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_discount/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/service_discount/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_discount/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/service_discount/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
