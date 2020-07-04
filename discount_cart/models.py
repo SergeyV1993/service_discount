@@ -15,7 +15,4 @@ class DiscountCart(models.Model):
         verbose_name = 'Скидка'
 
     def __str__(self):
-        try:
-            return self.code
-        except Exception as error:
-            print(error)
+        return self.code
