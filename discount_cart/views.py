@@ -4,6 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import *
+from .DiscountRequestAdapter import *
 
 from discount_cart.application.DiscountService import DiscountService
 
@@ -12,15 +13,22 @@ class Discounts(APIView):
     permission_classes = (IsAuthenticated,)
     authentication_classes = (TokenAuthentication, BasicAuthentication)
 
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+        self.discount_request_adapter = DiscountRequestAdapter()
+        self.discount = DiscountService()
+
     def post(self, request) -> Response:
         discount_data = DiscountPostSerializer(data=request.data)
 
         if not discount_data.is_valid():
             return Response({"message": "Not Valid"}, status=status.HTTP_400_BAD_REQUEST)
 
-        code = str(discount_data.validated_data['code'])
-        cart_number = int(discount_data.validated_data['cart'])
-        cart_amount = float(discount_data.validated_data['amount_cart'])
+        code, cart_number, cart_amount = self.discount_request_adapter.adapt_serializer_data(discount_data)
 
-        discount = DiscountService()
-        return discount.response(code, cart_number, cart_amount)
+        return self.discount.response_client_service(
+            code,
+            cart_number,
+            cart_amount
+        )

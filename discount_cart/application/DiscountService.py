@@ -24,7 +24,7 @@ class DiscountService:
     def set_discount_info(self, discount_info: DiscountCart, cart_number: int) -> None:
         return self.discount_cart.set_discount_info(discount_info, cart_number)
 
-    def response(self, code: str, cart_number: int, cart_amount: float) -> Response:
+    def response_client_service(self, code: str, cart_number: int, cart_amount: float) -> Response:
         if self.get_discount(code) is None:
             return Response({"message": "Code does not exist"}, status=status.HTTP_404_NOT_FOUND)
 
