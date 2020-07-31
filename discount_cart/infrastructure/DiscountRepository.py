@@ -1,4 +1,3 @@
-from .Adapter.DiscountCartAdapter import DiscountCartInfoAdapter
 from .DiscountCartFactory import DiscountCartFactory
 from .Gateway.DiscountCartGateway import DiscountCartGateway
 
@@ -9,7 +8,6 @@ from ..domain.Dto import DiscountCartDto
 class DiscountRepository(DiscountRepositoryInterface):
 
     def __init__(self):
-        self.discount_cart_adapter = DiscountCartInfoAdapter()
         self.gateway = DiscountCartGateway()
         self.discount_cart_factory = DiscountCartFactory()
 

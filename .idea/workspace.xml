@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="be9bf697-1a4f-46b2-80ff-c07d1d2c1f76" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discount_cart/application/DiscountService.py" beforeDir="false" afterPath="$PROJECT_DIR$/discount_cart/application/DiscountService.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discount_cart/infrastructure/DiscountCartAdapter.py" beforeDir="false" afterPath="$PROJECT_DIR$/discount_cart/infrastructure/Adapter/DiscountCartAdapter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discount_cart/infrastructure/DiscountRepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/discount_cart/infrastructure/DiscountRepository.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,10 +66,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="528" y="268" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1594294257390" />
-    <state x="541" y="280" width="598" height="490" key="find.popup" timestamp="1596187933526">
+    <state x="541" y="280" width="598" height="490" key="find.popup" timestamp="1596194811343">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="541" y="280" width="598" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1596187933526" />
+    <state x="541" y="280" width="598" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1596194811343" />
     <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1595063637485">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
