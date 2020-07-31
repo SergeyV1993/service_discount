@@ -1,6 +1,5 @@
 import abc
 
-from discount_cart.models import DiscountCart
 from rest_framework.response import Response
 
 

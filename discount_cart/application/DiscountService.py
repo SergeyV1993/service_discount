@@ -7,14 +7,14 @@ from rest_framework import status
 from .DiscountServieInterface import DiscountServiceInterface
 from discount_cart.models import DiscountCart
 from discount_cart.infrastructure.DiscountRepository import DiscountRepository
-from discount_cart.domain.Discount import Discount
+from ..domain.DiscountAmountServiceInterface import DiscountAmountInterface
 
 
 class DiscountService(DiscountServiceInterface):
 
     def __init__(self):
         self.discount_cart = DiscountRepository()
-        self.discount_cart_amount = Discount()
+        self.discount_cart_amount = DiscountAmountInterface()
 
     def response_client_service(self, code: str, cart_number: int, cart_amount: float) -> Response:
         if self.__get_discount_cart(code) is None:
