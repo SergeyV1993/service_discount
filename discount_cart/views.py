@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from .DiscountRequestAdapter import *
-from .application.DiscountServieInterface import DiscountServiceInterface
+from .application.DiscountService import DiscountService
 from .serializers import DiscountPostSerializer
 
 
@@ -17,7 +17,7 @@ class Discounts(APIView):
         super().__init__(**kwargs)
 
         self.discount_request_adapter = DiscountRequestAdapter()
-        self.discount = DiscountServiceInterface()
+        self.discount = DiscountService()
 
     def post(self, request) -> Response:
         discount_data = DiscountPostSerializer(data=request.data)
