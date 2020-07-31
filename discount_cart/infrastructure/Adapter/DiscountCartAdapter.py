@@ -1,4 +1,4 @@
-from ..models import DiscountCart
+from discount_cart.models import DiscountCart
 
 
 class DiscountCartInfoAdapter:
